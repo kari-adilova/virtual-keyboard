@@ -1,3 +1,3 @@
-import createKeyboard from './createKeyboard.js';
+import createKeyboard from './keyboard.js';
 
-createKeyboard();
+createKeyboard.createKeyboard();
