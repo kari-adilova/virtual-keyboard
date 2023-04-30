@@ -25,6 +25,7 @@ function createKeyboard() {
   const textarea = document.createElement('textarea');
   textarea.className = 'input-text';
   textarea.setAttribute('rows', '18');
+  textarea.autofocus = true;
 
   const keyboard = document.createElement('div');
   keyboard.className = 'keyboard';
