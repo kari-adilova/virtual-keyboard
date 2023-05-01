@@ -45,7 +45,7 @@ const RUSSIAN_LOWERCASE = [
     'CapsLock', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'Enter',
   ],
   [
-    'Shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '.', '\u2191', 'en',
+    'Shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '.', '\u2191', 'ru',
   ],
   [
     'Ctrl', 'Win', 'Alt', '', 'Alt', '\u2190', '\u2193', '\u2192', 'Ctrl',
@@ -54,7 +54,7 @@ const RUSSIAN_LOWERCASE = [
 
 const RUSSIAN_UPPERCASE = [
   [
-    '`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace',
+    'Ё', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace',
   ],
   [
     'Tab', 'Й', 'Ц', 'У', 'К', 'Е', 'Н', 'Г', 'Ш', 'Щ', 'З', 'Х', 'Ъ', '\\', 'Del',
@@ -63,13 +63,22 @@ const RUSSIAN_UPPERCASE = [
     'CapsLock', 'Ф', 'Ы', 'В', 'А', 'П', 'Р', 'О', 'Л', 'Д', 'Д', 'Ж', 'Enter',
   ],
   [
-    'Shift', 'Я', 'Ч', 'С', 'М', 'И', 'Т', 'Ь', 'Б', 'Ю', '.', '\u2191', 'en',
+    'Shift', 'Я', 'Ч', 'С', 'М', 'И', 'Т', 'Ь', 'Б', 'Ю', '.', '\u2191', 'ru',
   ],
   [
     'Ctrl', 'Win', 'Alt', '', 'Alt', '\u2190', '\u2193', '\u2192', 'Ctrl',
   ],
 ];
 
+const ENGLISH_SHIFT = [
+  '~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+',
+];
+
+const RUSSIAN_SHIFT = [
+  'Ё', '!', '"', '№', ';', '%', ':', '?', '*', '(', ')', '_', '+',
+];
+
 export {
-  ENGLISH_LOWERCASE, ENGLISH_UPPERCASE, RUSSIAN_LOWERCASE, RUSSIAN_UPPERCASE,
+  ENGLISH_LOWERCASE, ENGLISH_UPPERCASE, RUSSIAN_LOWERCASE,
+  RUSSIAN_UPPERCASE, ENGLISH_SHIFT, RUSSIAN_SHIFT,
 };

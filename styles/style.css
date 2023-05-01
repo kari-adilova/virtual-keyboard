@@ -73,6 +73,7 @@ main {
   background-color: #31b92d;
   box-shadow: 0 5px #3b7e4c;
   transform: translateY(3px);
+  transition: 0.08s;
 }
 .key.glow {
   background-color: #31b92d;
@@ -92,6 +93,11 @@ main {
 }
 .capslock {
   width: 125px;
+}
+.capslock.chosen {
+  background-color: #31b92d;
+  box-shadow: 0 5px #3b7e4c;
+  transform: translateY(3px);
 }
 .enter {
   width: 105px;

@@ -1,11 +1,20 @@
 import {
-  ENGLISH_LOWERCASE, ENGLISH_UPPERCASE, RUSSIAN_LOWERCASE, RUSSIAN_UPPERCASE,
+  ENGLISH_LOWERCASE, RUSSIAN_LOWERCASE,
 } from './keys.js';
 
 const body = document.querySelector('body');
 const HEADER_TITLE = 'RSS Virtual Keyboard';
+const { sessionStorage } = window;
 
 function createKeyboard() {
+  const lang = sessionStorage.getItem('lang');
+  let currentLang = [];
+  if (lang === 'en') {
+    currentLang = ENGLISH_LOWERCASE;
+  } else {
+    currentLang = RUSSIAN_LOWERCASE;
+  }
+
   // wrapper
   const wrapper = document.createElement('div');
   wrapper.className = 'wrapper';
@@ -30,93 +39,93 @@ function createKeyboard() {
   const keyboard = document.createElement('div');
   keyboard.className = 'keyboard';
 
-  for (let i = 0; i < ENGLISH_LOWERCASE.length; i += 1) {
+  for (let i = 0; i < currentLang.length; i += 1) {
     const keyboardLine = document.createElement('div');
     keyboardLine.className = 'keyboard__line';
 
-    for (let j = 0; j < ENGLISH_LOWERCASE[i].length; j += 1) {
+    for (let j = 0; j < currentLang[i].length; j += 1) {
       const button = document.createElement('button');
       button.className = 'key';
 
-      if (ENGLISH_LOWERCASE[i][j] === 'Backspace'
-      || ENGLISH_LOWERCASE[i][j] === 'Tab'
-      || ENGLISH_LOWERCASE[i][j] === 'Del'
-      || ENGLISH_LOWERCASE[i][j] === 'CapsLock'
-      || ENGLISH_LOWERCASE[i][j] === 'Enter'
-      || ENGLISH_LOWERCASE[i][j] === 'Shift'
-      || ENGLISH_LOWERCASE[i][j] === '\u2191'
-      || ENGLISH_LOWERCASE[i][j] === 'en'
-      || ENGLISH_LOWERCASE[i][j] === 'Ctrl'
-      || ENGLISH_LOWERCASE[i][j] === 'Win'
-      || ENGLISH_LOWERCASE[i][j] === 'Alt'
-      || ENGLISH_LOWERCASE[i][j] === ''
-      || ENGLISH_LOWERCASE[i][j] === '\u2190'
-      || ENGLISH_LOWERCASE[i][j] === '\u2193'
-      || ENGLISH_LOWERCASE[i][j] === '\u2192') {
+      if (currentLang[i][j] === 'Backspace'
+      || currentLang[i][j] === 'Tab'
+      || currentLang[i][j] === 'Del'
+      || currentLang[i][j] === 'CapsLock'
+      || currentLang[i][j] === 'Enter'
+      || currentLang[i][j] === 'Shift'
+      || currentLang[i][j] === '\u2191'
+      || currentLang[i][j] === 'en'
+      || currentLang[i][j] === 'Ctrl'
+      || currentLang[i][j] === 'Win'
+      || currentLang[i][j] === 'Alt'
+      || currentLang[i][j] === ''
+      || currentLang[i][j] === '\u2190'
+      || currentLang[i][j] === '\u2193'
+      || currentLang[i][j] === '\u2192') {
         button.classList.add('functional');
       }
 
-      if (ENGLISH_LOWERCASE[i][j] === 'Backspace') {
+      if (currentLang[i][j] === 'Backspace') {
         button.classList.add('backspace');
       }
 
-      if (ENGLISH_LOWERCASE[i][j] === 'Tab') {
+      if (currentLang[i][j] === 'Tab') {
         button.classList.add('tab');
       }
 
-      if (ENGLISH_LOWERCASE[i][j] === 'Del') {
+      if (currentLang[i][j] === 'Del') {
         button.classList.add('del');
       }
 
-      if (ENGLISH_LOWERCASE[i][j] === 'CapsLock') {
+      if (currentLang[i][j] === 'CapsLock') {
         button.classList.add('capslock');
       }
 
-      if (ENGLISH_LOWERCASE[i][j] === 'Enter') {
+      if (currentLang[i][j] === 'Enter') {
         button.classList.add('enter');
       }
 
-      if (ENGLISH_LOWERCASE[i][j] === 'Shift') {
+      if (currentLang[i][j] === 'Shift') {
         button.classList.add('shift');
       }
 
-      if (ENGLISH_LOWERCASE[i][j] === '\u2191') {
+      if (currentLang[i][j] === '\u2191') {
         button.classList.add('arrow-up');
       }
 
-      if (ENGLISH_LOWERCASE[i][j] === 'en') {
+      if (currentLang[i][j] === 'en' || currentLang[i][j] === 'ru') {
         button.classList.add('lang');
       }
 
-      if (ENGLISH_LOWERCASE[i][j] === 'Ctrl') {
+      if (currentLang[i][j] === 'Ctrl') {
         button.classList.add('ctrl');
       }
 
-      if (ENGLISH_LOWERCASE[i][j] === 'Win') {
+      if (currentLang[i][j] === 'Win') {
         button.classList.add('win');
       }
 
-      if (ENGLISH_LOWERCASE[i][j] === 'Alt') {
+      if (currentLang[i][j] === 'Alt') {
         button.classList.add('alt');
       }
 
-      if (ENGLISH_LOWERCASE[i][j] === '') {
+      if (currentLang[i][j] === '') {
         button.classList.add('space');
       }
 
-      if (ENGLISH_LOWERCASE[i][j] === '\u2190') {
+      if (currentLang[i][j] === '\u2190') {
         button.classList.add('arrow-left');
       }
 
-      if (ENGLISH_LOWERCASE[i][j] === '\u2193') {
+      if (currentLang[i][j] === '\u2193') {
         button.classList.add('arrow-down');
       }
 
-      if (ENGLISH_LOWERCASE[i][j] === '\u2192') {
+      if (currentLang[i][j] === '\u2192') {
         button.classList.add('arrow-right');
       }
 
-      button.innerText = ENGLISH_LOWERCASE[i][j];
+      button.innerText = currentLang[i][j];
       keyboardLine.appendChild(button);
     }
 
@@ -139,7 +148,7 @@ function createKeyboard() {
   footerText1.innerText = 'Keyboard was done in Windows OS';
   const footerText2 = document.createElement('p');
   footerText2.className = 'footer__info';
-  footerText2.innerText = 'Use shift + alt to switch language';
+  footerText2.innerText = 'Use ctrl + alt to switch language';
 
   footer.appendChild(footerText1);
   footer.appendChild(footerText2);
