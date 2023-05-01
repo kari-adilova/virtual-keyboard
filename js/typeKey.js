@@ -267,7 +267,7 @@ function clickKeys() {
         key.innerText = 'Hide keyboard'; // eslint-disable-line no-param-reassign
         const keyboard = document.querySelector('.keyboard');
         keyboard.style.display = 'flex';
-      } else {
+      } else if (key.innerText !== 'Shift' && key.innerText !== 'Alt' && key.innerText !== 'Ctrl' && key.innerText !== 'Win' && key.innerText !== 'Del') {
         textarea.value += key.innerText;
       }
     });
