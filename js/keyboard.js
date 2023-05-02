@@ -9,10 +9,10 @@ const { sessionStorage } = window;
 function createKeyboard() {
   const lang = sessionStorage.getItem('lang');
   let currentLang = [];
-  if (lang === 'en') {
-    currentLang = ENGLISH_LOWERCASE;
-  } else {
+  if (lang === 'ru') {
     currentLang = RUSSIAN_LOWERCASE;
+  } else {
+    currentLang = ENGLISH_LOWERCASE;
   }
 
   // wrapper
